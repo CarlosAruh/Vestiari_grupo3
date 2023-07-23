@@ -3,6 +3,7 @@ import { Button, Form } from 'react-bootstrap';
 import { Helmet } from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom';
 import { Store } from '../Store';
+import CheckoutSteps from '../components/CheckoutSteps';
 
 export default function ShippingAddressScreen() {
   const navigate = useNavigate();
@@ -53,6 +54,7 @@ export default function ShippingAddressScreen() {
       <Helmet>
         <title>Endereço de Entrega</title>
       </Helmet>
+      <CheckoutSteps step1 step2></CheckoutSteps>
       <div className="container small-container">
         <h1 className="my-3">Endereço de Entrega</h1>
         <Form onSubmit={submitHandler}>
