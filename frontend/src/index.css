@@ -6,11 +6,22 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.logo {
+  max-width: 60px;
+  max-height: 60px;
+  width: auto;
+  height: auto;
+  padding: 0 5px 0 5px;
+}
 .site-container {
   min-height: 100vh;
 }
 main {
   flex: 1;
+}
+.btn-outline-primary {
+  background-color: #65888c;
+  color: #ffffff;
 }
 .btn-primary {
   background-color: #65888c;
@@ -57,4 +68,35 @@ main {
 .checkout-stepes > div.active {
   border-bottom: 0.2rem solid #a6281c;
   color: #a6281c;
+}
+
+/* sidebar */
+.navbar-bt {
+  border: yellow;
+  color: #a6281c;
+  background-color: #da6e48;
+}
+.navbar-bt :hover {
+  color: #da6e48;
+}
+.navbar-brand {
+  font-weight: bold;
+}
+.side-navbar {
+  width: 240px;
+  height: 100%;
+  position: absolute;
+  left: -300px;
+  background-color: #3f0201;
+  transition: 0.5s;
+}
+
+.site-container {
+  transition: 0.4s;
+}
+.active-cont {
+  margin-left: 240px;
+}
+.active-nav {
+  left: 0;
 }
