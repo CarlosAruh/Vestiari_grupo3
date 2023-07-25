@@ -1,4 +1,4 @@
-import { useEffect, useReducer } from 'react';
+import { useEffect, useReducer, useState } from 'react';
 import axios from 'axios';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -45,9 +45,9 @@ function HomeScreen() {
   return (
     <div>
       <Helmet>
-        <title>Amazona</title>
+        <title>Vestiare</title>
       </Helmet>
-      <h1>Featured Products</h1>
+      <h1>Lista de Produtos</h1>
       <div className="products">
         {loading ? (
           <LoadingBox />
