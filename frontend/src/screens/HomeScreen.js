@@ -1,20 +1,18 @@
-import { useEffect, useReducer, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useEffect, useReducer } from 'react';
 import axios from 'axios';
-import logger from 'use-reducer-logger';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Product from '../components/Product';
 import { Helmet } from 'react-helmet-async';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
-//import data from '../data';
+// import data from '../data';
 
 const reducer = (state, action) => {
   switch (action.type) {
     case 'FETCH_REQUEST':
       return { ...state, loading: true };
-    case 'FETCH_SUCESS':
+    case 'FETCH_SUCCESS':
       return { ...state, products: action.payload, loading: false };
     case 'FETCH_FAIL':
       return { ...state, loading: false, error: action.payload };
@@ -24,32 +22,32 @@ const reducer = (state, action) => {
 };
 
 function HomeScreen() {
-  const [{ loading, error, products }, dispatch] = useReducer(logger(reducer), {
+  const [{ loading, error, products }, dispatch] = useReducer(reducer, {
     products: [],
     loading: true,
     error: '',
   });
-  //const [products, setProducts] = useState([]);
+  // const [products, setProducts] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       dispatch({ type: 'FETCH_REQUEST' });
       try {
         const result = await axios.get('/api/products');
-        dispatch({ type: 'FETCH_SUCESS', payload: result.data });
+        dispatch({ type: 'FETCH_SUCCESS', payload: result.data });
       } catch (err) {
         dispatch({ type: 'FETCH_FAIL', payload: err.message });
       }
 
-      //setProducts(result.data);
+      // setProducts(result.data);
     };
     fetchData();
   }, []);
   return (
     <div>
       <Helmet>
-        <title>Vestiaré</title>
+        <title>Amazona</title>
       </Helmet>
-      <h1>Lista de Produtos</h1>
+      <h1>Featured Products</h1>
       <div className="products">
         {loading ? (
           <LoadingBox />
@@ -57,9 +55,9 @@ function HomeScreen() {
           <MessageBox variant="danger">{error}</MessageBox>
         ) : (
           <Row>
-            {products.map((products) => (
-              <Col key={products.slug} sm={6} md={4} lg={3} className="mb-3">
-                <Product product={products}></Product>
+            {products.map((product) => (
+              <Col key={product.slug} sm={6} md={4} lg={3} className="mb-3">
+                <Product product={product}></Product>
               </Col>
             ))}
           </Row>
@@ -68,5 +66,4 @@ function HomeScreen() {
     </div>
   );
 }
-
 export default HomeScreen;
