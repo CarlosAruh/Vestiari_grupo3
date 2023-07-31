@@ -1,4 +1,6 @@
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import HomeScreen from './screens/HomeScreen';
 import ProductScreen from './screens/ProductScreen';
 import Navbar from 'react-bootstrap/Navbar';
@@ -16,7 +18,7 @@ import SignupScreen from './screens/SignupScreen';
 import PaymentMethodScreen from './screens/PaymentMethodScreen';
 import PlaceOrderScreen from './screens/PlaceOrderScreen';
 import { Button } from 'react-bootstrap';
-import logo from './logo.svg';
+import logo from './logo.png';
 import { getError } from './utils';
 import axios from 'axios';
 import SearchBox from './SearchBox';
@@ -47,6 +49,7 @@ function App() {
   }, []);
   return (
     <BrowserRouter>
+      <ToastContainer position="bottom-center" limit={1} />
       <div
         className={
           sidebarIsOpen
@@ -66,7 +69,7 @@ function App() {
 
               <img to="/" className="logo" src={logo} alt="logo" />
               <LinkContainer to="/">
-                <Navbar.Brand>Vestiaré</Navbar.Brand>
+                <Navbar.Brand>IPhome</Navbar.Brand>
               </LinkContainer>
               <SearchBox />
               <Nav className="me-auto">

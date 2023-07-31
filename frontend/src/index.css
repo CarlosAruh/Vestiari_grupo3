@@ -20,15 +20,15 @@ main {
   flex: 1;
 }
 .btn-outline-primary {
-  background-color: #65888c;
+  background-color: black;
   color: #ffffff;
 }
 .btn-primary {
-  background-color: #65888c;
+  background-color: black;
   color: #ffffff;
 }
 .custom-navbar {
-  background-color: #da6e48;
+  background-color: #ff4228;
 }
 .products {
   display: flex;
@@ -68,6 +68,9 @@ main {
 .checkout-stepes > div.active {
   border-bottom: 0.2rem solid #a6281c;
   color: #a6281c;
+}
+.descricao {
+  word-wrap: break-word;
 }
 
 /* sidebar */
