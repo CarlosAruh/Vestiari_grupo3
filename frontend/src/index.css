@@ -70,7 +70,7 @@ main {
   color: #a6281c;
 }
 .descricao {
-  word-wrap: break-word;
+  white-space: pre-wrap;
 }
 
 /* sidebar */
