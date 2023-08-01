@@ -90,7 +90,7 @@ main {
   height: 100%;
   position: absolute;
   left: -300px;
-  background-color: #3f0201;
+  background-color: #fdbd00;
   transition: 0.5s;
 }
 
@@ -110,7 +110,7 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 0, 0, 0.5);
+  background-color: rgba(255, 255, 255, 0.8);
 
   display: flex;
   justify-content: center;
@@ -130,6 +130,14 @@ main {
 
 .popup-inner .close-btn {
   position: absolute;
-  top: 16px;
-  right: 16px;
+  bottom: 16px;
+  left: 50%;
+  border-radius: 30%;
+  background-color: black;
+  color: #ffffff;
+  box-shadow: 0 2px 4px rgba(224, 10, 10, 0.2);
+  transition: background-color 0.3s ease;
+}
+.popup-inner .close-btn:hover {
+  background-color: darkred;
 }

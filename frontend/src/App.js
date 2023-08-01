@@ -50,6 +50,7 @@ function App() {
     fetchCategories();
   }, []);
   const [buttonPopup, setButtonPopup] = useState(true);
+
   return (
     <BrowserRouter>
       <ToastContainer position="bottom-center" limit={1} />
@@ -147,11 +148,11 @@ function App() {
             </Routes>
           </Container>
         </main>
-        <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
-          <h3>Meu poupup</h3>
-        </Popup>
-        <footer>
+        <div>
+          <Popup trigger={buttonPopup} setTrigger={setButtonPopup}></Popup>
           <button onClick={() => setButtonPopup(true)}>Promoção</button>
+        </div>
+        <footer>
           <div className="text-center">All Rights reserved</div>
         </footer>
       </div>
