@@ -6,6 +6,8 @@ import Button from 'react-bootstrap/Button';
 import { Helmet } from 'react-helmet-async';
 import { useContext, useEffect, useState } from 'react';
 import { Store } from '../Store';
+import { toast } from 'react-toastify';
+import { getError } from '../utils';
 
 export default function SignupScreen() {
   const navigate = useNavigate();
@@ -23,7 +25,7 @@ export default function SignupScreen() {
   const submitHandler = async (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {
-      alert('As senhas não correspondem');
+      toast.error('As senhas não correspondem');
       return;
     }
     try {
@@ -36,7 +38,7 @@ export default function SignupScreen() {
       localStorage.setItem('userInfo', JSON.stringify(data));
       navigate(redirect || '/');
     } catch (err) {
-      alert('Senha ou E-Mail Invalidos');
+      toast.error(getError(err));
     }
   };
 
