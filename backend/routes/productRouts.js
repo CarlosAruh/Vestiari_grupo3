@@ -1,6 +1,7 @@
 import express from 'express';
 import expressAsyncHandler from 'express-async-handler';
 import Product from '../models/productModel.js';
+import { isAuth } from '../utils.js';
 
 const productRouter = express.Router();
 
@@ -36,7 +37,7 @@ productRouter.get('/:id', async (req, res) => {
 
 productRouter.post(
   '/:id/reviews',
-  //isAuth,
+  isAuth,
   expressAsyncHandler(async (req, res) => {
     const productId = req.params.id;
     const product = await Product.findById(productId);
