@@ -22,6 +22,7 @@ Mongoose <br>
 Nodemon <br>
 Bcrypt <br>
 Dotenv <br>
+Express <br>
 
 **Projeto alocado no MongoDB**
 
