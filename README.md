@@ -20,7 +20,8 @@ Bootstrap <br>
 Toastify <br>
 Mongoose <br>
 Nodemon <br>
-bcrypt <br>
+Bcrypt <br>
+Dotenv <br>
 
 **Projeto alocado no MongoDB**
 
